@@ -1,1 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-COLD — Курсы по OnlyFans & Полный Гайд от А до Я</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Rajdhani -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#00a3ff',
+                            cyan: '#00e5ff',
+                            darkBg: '#080c14',
+                            cardBg: '#0f172a',
+                            neonGlow: '#00d2ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Rajdhani', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 
+    <style>
+        /* Custom Neon Effects and Scrollbars */
+        body {
+            background-color: #050811;
+            color: #f1f5f9;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .neon-text-blue {
+            text-shadow: 0 0 10px rgba(0, 163, 255, 0.7), 0 0 20px rgba(0, 229, 255, 0.5), 0 0 30px rgba(0, 163, 255, 0.3);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 15px rgba(0, 163, 255, 0.3), inset 0 0 15px rgba(0, 163, 255, 0.2);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+        }
+
+        .neon-box-glow {
+            box-shadow: 0 0 25px rgba(0, 163, 255, 0.4);
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #0082fb 0%, #00e5ff 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #00e5ff 0%, #0082fb 100%);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Brush text underline background vibe */
+        .brush-badge {
+            background: linear-gradient(90deg, rgba(0, 163, 255, 0.2) 0%, rgba(0, 229, 255, 0.3) 50%, rgba(0, 163, 255, 0.2) 100%);
+            border-left: 4px solid #00e5ff;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050811;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0082fb;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e5ff;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-brand-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-blue flex items-center justify-center shadow-lg shadow-brand-blue/50 group-hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-2xl tracking-wider text-white flex items-center gap-1">
+                        Q-COLD <span class="text-brand-cyan text-sm font-sans font-normal border border-brand-cyan/40 px-1.5 py-0.5 rounded">PRO</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase">БІЛЬШЕ, НІЖ ПРОСТО ЖИТТЯ</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#about" class="hover:text-brand-cyan transition-colors">О курсе</a>
+                <a href="#program" class="hover:text-brand-cyan transition-colors">Программа</a>
+                <a href="#features" class="hover:text-brand-cyan transition-colors">Преимущества</a>
+                <a href="#pricing" class="hover:text-brand-cyan transition-colors">Тарифы</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4">
+                <button onclick="openModal('PRO Course')" class="gradient-btn px-6 py-2.5 rounded-full font-bold text-slate-950 flex items-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>КУПИТЬ ГАЙД</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-screen">
+        <!-- Background Lights -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-cyan/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/40 text-brand-cyan text-xs sm:text-sm font-bold tracking-wider uppercase">
+                        <i class="fa-solid fa-crown text-amber-400"></i>
+                        ПОЛНАЯ ИНСТРУКЦИЯ ОТ А ДО Я
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight font-heading">
+                        КУРСЫ ПО <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-cyan neon-text-blue">ONLYFANS</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Хочешь зарабатывать и выжать максимум из контента? Получи пошаговый алгоритм запуска, оформление, методы продвижения и монетизацию от **Q-COLD**.
+                    </p>
+
+                    <!-- Feature Badges Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-circle-play text-brand-cyan text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">ПОШАГОВЫЙ ПЛАН</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-shield-halved text-brand-cyan text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">ПРОВЕРЕННЫЕ МЕТОДЫ</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-chart-line text-brand-cyan text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">РЕАЛЬНЫЕ ПРИМЕРЫ</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-headset text-brand-cyan text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">ПОДДЕРЖКА 24/7</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <button onclick="openModal('PRO Course')" class="w-full sm:w-auto gradient-btn text-slate-950 font-black px-8 py-4 rounded-xl text-lg flex items-center justify-center gap-3 shadow-xl">
+                            <span>ПОЛУЧИТЬ КУРС</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="#program" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 border border-brand-blue/30 text-white font-bold px-8 py-4 rounded-xl text-lg flex items-center justify-center gap-2 transition-all">
+                            <span>Узнать подробнее</span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-xs text-brand-cyan/80 font-semibold tracking-wide italic">
+                        ⚡ Стань успешным уже сейчас • Твой доход в твоих руках!
+                    </p>
+                </div>
+
+                <!-- Right Banner Card (Simulated Profile Mockup) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-slate-900/90 rounded-3xl p-6 border border-brand-cyan/30 shadow-2xl neon-border backdrop-blur-xl">
+                        
+                        <!-- Top Stat Badge -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-blue to-brand-cyan p-0.5">
+                                    <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center font-bold text-lg">
+                                        QC
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Q-COLD Creator</h4>
+                                    <p class="text-xs text-brand-cyan">Verified OnlyFans Mentor</p>
+                                </div>
+                            </div>
+                            <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs px-2.5 py-1 rounded-full font-bold animate-pulse">
+                                LIVE STATS
+                            </span>
+                        </div>
+
+                        <!-- Main Simulated Earnings Screen -->
+                        <div class="my-6 bg-slate-950/80 rounded-2xl p-5 border border-slate-800 text-center relative overflow-hidden">
+                            <div class="absolute -right-4 -top-4 w-20 h-20 bg-brand-blue/10 rounded-full blur-xl"></div>
+                            <span class="text-xs text-gray-400 font-medium tracking-wide block uppercase">Total Earnings</span>
+                            <div class="text-3xl sm:text-4xl font-black text-white my-2 tracking-tight font-heading">
+                                $<span id="earningsCounter">12,482.32</span>
+                            </div>
+                            <div class="inline-flex items-center gap-1 text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <span>+287% за последний месяц</span>
+                            </div>
+                        </div>
+
+                        <!-- Key Highlights Checklist -->
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-3 bg-slate-950/50 p-2.5 rounded-lg border border-slate-800/60">
+                                <i class="fa-solid fa-check text-brand-cyan font-bold"></i>
+                                <span class="text-gray-200">Создание взрывного контента</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-slate-950/50 p-2.5 rounded-lg border border-slate-800/60">
+                                <i class="fa-solid fa-check text-brand-cyan font-bold"></i>
+                                <span class="text-gray-200">Секреты алгоритмов продвижения</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-slate-950/50 p-2.5 rounded-lg border border-slate-800/60">
+                                <i class="fa-solid fa-check text-brand-cyan font-bold"></i>
+                                <span class="text-gray-200">Анонимность и безопасность на 100%</span>
+                            </div>
+                        </div>
+
+                        <!-- Footer Quote -->
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                            <p class="text-xs font-bold text-gray-300 italic">
+                                «МЕЧТЫ СТАНОВЯТСЯ РЕАЛЬНОСТЬЮ ♡»
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET SECTION (В КУРСЕ ТЫ ПОЛУЧИШЬ) -->
+    <section id="program" class="py-20 relative bg-slate-950/60 border-y border-brand-blue/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black text-white font-heading tracking-wide mb-4">
+                    В КУРСЕ ТЫ <span class="text-brand-cyan neon-text-blue">ПОЛУЧИШЬ:</span>
+                </h2>
+                <p class="text-gray-400 text-base">
+                    Все необходимые инструменты, готовые шаблоны и фишки для быстрой монетизации с нуля.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Как создавать привлекательный контент</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Секреты качественной съёмки на телефон, свет, ракурсы и идеи для постов, которые вызывают виральный отклик аудитории.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Как правильно оформить профиль</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Пошаговая настройка аккаунта, продающая шапка профиля, правильный прайсинг и визуал, удерживающий подписчиков.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Продвижение и привлечение подписчиков</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Бесплатные и платные трафик-стратегии: TikTok, Reels, Twitter (X), Reddit и кросс-промо без блокировок.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Больше донатов и чаевых</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Психология общения в личных сообщениях, продажа эксклюзивного PPV-контента и скрипты для чата.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Безопасность и анонимность</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Как скрыть личность и геолокацию, защитить контент от слива и правильно выводить заработанные средства.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-brand-blue/50 transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Бонусы и готовые шаблоны</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Готовые скрипты общения, шаблоны рассылок, контент-планы на 30 дней и чек-листы запуска.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Q-COLD ECOSYSTEM & MULTI-THEME TABS -->
+    <section id="features" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-black text-white font-heading">
+                    ВСЕЛЕННАЯ <span class="text-brand-cyan">Q-COLD</span>
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Выбери интересующее направление и прокачайся</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+                <button onclick="switchTab('of')" id="tab-of" class="tab-btn px-6 py-3 rounded-full font-bold text-sm bg-brand-blue text-slate-950 transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i> OnlyFans Курсы
+                </button>
+                <button onclick="switchTab('sport')" id="tab-sport" class="tab-btn px-6 py-3 rounded-full font-bold text-sm bg-slate-900 text-gray-400 border border-slate-800 hover:text-white transition-all">
+                    <i class="fa-solid fa-dumbbell mr-2"></i> Спорт & Дисциплина
+                </button>
+                <button onclick="switchTab('drink')" id="tab-drink" class="tab-btn px-6 py-3 rounded-full font-bold text-sm bg-slate-900 text-gray-400 border border-slate-800 hover:text-white transition-all">
+                    <i class="fa-solid fa-bolt mr-2"></i> Q-COLD Power Drink
+                </button>
+                <button onclick="switchTab('gaming')" id="tab-gaming" class="tab-btn px-6 py-3 rounded-full font-bold text-sm bg-slate-900 text-gray-400 border border-slate-800 hover:text-white transition-all">
+                    <i class="fa-solid fa-gamepad mr-2"></i> Dota 2 & Стримы
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="bg-slate-900/90 border border-brand-blue/30 rounded-3xl p-6 sm:p-10 neon-border">
+                
+                <!-- OF Content -->
+                <div id="content-of" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="text-brand-cyan font-bold text-xs tracking-widest uppercase block mb-2">Курсы & Монетизация</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Делай контент — получай деньги ♡</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Вся база собрана в один структурированный гайд. Никакой лишней теории — только точные шаги к стабильному доходу и финансовой независимости.
+                        </p>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-200">
+                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                                <span>Выход на первенство в нише</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-200">
+                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                                <span>Більше підписників = Більше грошей</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-coins text-5xl text-brand-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold text-white">Готов сформировать свой доход?</h4>
+                        <p class="text-xs text-gray-400 my-2">Получи гайд прямо сейчас в удобном формате PDF + видео-уроки.</p>
+                        <button onclick="openModal('PRO Course')" class="gradient-btn px-6 py-3 rounded-xl font-bold text-slate-950 mt-2">Забрать Гайд</button>
+                    </div>
+                </div>
+
+                <!-- Sport Content -->
+                <div id="content-sport" class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="text-brand-cyan font-bold text-xs tracking-widest uppercase block mb-2">Воздержание + Спорт</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Дисциплина = Результат</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Сильное тело дает уверенность в себе. Программа тренировок, режим воздержания для поднятия тестостерона, фокуса и максимальной энергии каждый день!
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 text-xs font-bold text-white">
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">🚫 НЕТ ПОРНО</div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">📈 ЕСТЬ ПРОГРЕСС</div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">💪 ЕСТЬ РЕЗУЛЬТАТ</div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">👑 ЕСТЬ Я</div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-fire-flame-curved text-5xl text-brand-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold text-white">Твой потенциал без меж</h4>
+                        <p class="text-xs text-gray-400 my-2">Стань лучшей версией себя с личными рекомендациями Q-COLD.</p>
+                    </div>
+                </div>
+
+                <!-- Drink Content -->
+                <div id="content-drink" class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="text-brand-cyan font-bold text-xs tracking-widest uppercase block mb-2">Q-COLD Refreshment</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Погинь в свіжість</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Один напиток — много возможностей! Заряд бодрости на весь день, приятный холодный вкус и поддержка энергии для работы и стримов.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm text-gray-200">
+                                <i class="fa-solid fa-bolt text-brand-cyan"></i>
+                                <span>Бодрость и фокус 24/7</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-200">
+                                <i class="fa-solid fa-snowflake text-brand-cyan"></i>
+                                <span>Ледяная свежесть Q-COLD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-bottle-droplet text-5xl text-brand-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold text-white">Q-COLD Power Drink</h4>
+                        <p class="text-xs text-gray-400 my-2">Сила • Дисциплина • Результат</p>
+                    </div>
+                </div>
+
+                <!-- Gaming Content -->
+                <div id="content-gaming" class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="text-brand-cyan font-bold text-xs tracking-widest uppercase block mb-2">Dota 2 & Content</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Поддержи Донатом! ♡</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Стримы, Dota 2, эксклюзивные косплеи (Lana Rose, Luna) и море фана. Твоя поддержка помогает делать контент еще круче!
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-bold">
+                            <span class="bg-brand-blue/20 text-brand-cyan px-3 py-1 rounded-full border border-brand-blue/40">💙 ПОДДЕРЖКА</span>
+                            <span class="bg-brand-blue/20 text-brand-cyan px-3 py-1 rounded-full border border-brand-blue/40">👑 ЭКСКЛЮЗИВ</span>
+                            <span class="bg-brand-blue/20 text-brand-cyan px-3 py-1 rounded-full border border-brand-blue/40">⚡ ИГРЫ</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                        <i class="fa-solid fa-headset text-5xl text-brand-cyan mb-4"></i>
+                        <h4 class="text-xl font-bold text-white">Спасибо за каждый донат ♡</h4>
+                        <p class="text-xs text-gray-400 my-2">Вместе мы можем больше!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION (ТАРИФЫ / КУПИТЬ ГАЙД) -->
+    <section id="pricing" class="py-20 relative bg-slate-950/80 border-t border-brand-blue/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black text-white font-heading">
+                    ВЫБЕРИ СВОЙ <span class="text-brand-cyan neon-text-blue">ТАРИФ</span>
+                </h2>
+                <p class="text-gray-400 text-base mt-2">
+                    Инвестируй в знания сейчас и окупи курс уже с первых подписчиков
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Basic Plan -->
+                <div class="bg-slate-900/80 rounded-3xl p-8 border border-slate-800 flex flex-col justify-between hover:border-brand-blue/40 transition-all">
+                    <div>
+                        <div class="text-gray-400 font-bold text-sm tracking-wider uppercase mb-2">Старт</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Базовый Гайд</h3>
+                        <div class="text-4xl font-black text-white font-heading mb-6">
+                            $29 <span class="text-xs text-gray-400 font-normal">/ навсегда</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Текстовый PDF-гайд (50+ стр)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Инструкция по регистрации</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Базовые методы продвижения</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-500 line-through">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>Личная поддержка</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Базовый Гайд')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl transition-colors">
+                        Выбрать Базовый
+                    </button>
+                </div>
+
+                <!-- Pro Plan (HIT) -->
+                <div class="bg-slate-900 rounded-3xl p-8 border-2 border-brand-cyan shadow-2xl neon-border relative flex flex-col justify-between transform lg:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-blue to-brand-cyan text-slate-950 font-black px-4 py-1 rounded-full text-xs uppercase tracking-wider">
+                        ХИТ ПРОДАЖ 🔥
+                    </div>
+                    <div>
+                        <div class="text-brand-cyan font-bold text-sm tracking-wider uppercase mb-2">ПОЛНЫЙ КУРС</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">PRO Обучение</h3>
+                        <div class="text-4xl font-black text-white font-heading mb-6">
+                            $79 <span class="text-xs text-gray-400 font-normal">/ навсегда</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Всё из Базового тарифа</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Видео-уроки от Q-COLD</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Шаблоны переписок и скрипты</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Доступ в закрытый чат 24/7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('PRO Обучение')" class="w-full gradient-btn text-slate-950 font-black py-4 rounded-xl shadow-lg">
+                        ПОЛУЧИТЬ КУРС
+                    </button>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="bg-slate-900/80 rounded-3xl p-8 border border-slate-800 flex flex-col justify-between hover:border-brand-blue/40 transition-all">
+                    <div>
+                        <div class="text-amber-400 font-bold text-sm tracking-wider uppercase mb-2">Наставничество</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">VIP Менторство</h3>
+                        <div class="text-4xl font-black text-white font-heading mb-6">
+                            $199 <span class="text-xs text-gray-400 font-normal">/ навсегда</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Всё из PRO тарифа</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Личный разбор профиля от Q-COLD</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Индивидуальная трафик-стратегия</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan"></i>
+                                <span>Гарантия выхода на результат</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('VIP Менторство')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl transition-colors">
+                        Выбрать VIP
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-10 border-t border-slate-900 text-center text-gray-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+                <span class="font-heading font-extrabold text-xl text-white">Q-COLD OFFICIAL</span>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-brand-cyan">OnlyFans</a>
+                    <a href="#" class="hover:text-brand-cyan">Telegram</a>
+                    <a href="#" class="hover:text-brand-cyan">YouTube</a>
+                </div>
+            </div>
+            <p>© 2026 Q-COLD. Все права защищены. Курсы по OnlyFans — Полная инструкция от А до Я.</p>
+        </div>
+    </footer>
+
+    <!-- ORDER / BUY MODAL -->
+    <div id="buyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
+        <div class="bg-slate-900 border border-brand-cyan/40 w-full max-w-md rounded-3xl p-6 sm:p-8 relative neon-border shadow-2xl">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-brand-blue/20 text-brand-cyan rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white font-heading">Оформление Заказа</h3>
+                <p id="modalPlanName" class="text-brand-cyan font-bold text-sm mt-1">Тариф: PRO Обучение</p>
+            </div>
+
+            <!-- Fake Form / Payment Method -->
+            <form onsubmit="handlePurchase(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Ваше имя / Никнейм</label>
+                    <input type="text" required placeholder="Alexander" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Telegram / Email для доступа</label>
+                    <input type="text" required placeholder="@username или email" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Способ оплаты</label>
+                    <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                        <option>Криптовалюта (USDT / TON / BTC)</option>
+                        <option>Банковская карта (Visa / Mastercard)</option>
+                        <option>Apple Pay / Google Pay</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full gradient-btn text-slate-950 font-black py-4 rounded-xl mt-4 text-center shadow-lg uppercase tracking-wide">
+                    Перейти к оплате ⚡
+                </button>
+            </form>
+
+            <p class="text-[10px] text-gray-500 text-center mt-4">
+                🔒 Безопасный платеж. Доступ предоставляется моментально после подтверждения.
+            </p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tabKey) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Reset tab button styles
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(btn => {
+                btn.classList.remove('bg-brand-blue', 'text-slate-950');
+                btn.classList.add('bg-slate-900', 'text-gray-400', 'border', 'border-slate-800');
+            });
+
+            // Show selected content
+            const activeContent = document.getElementById('content-' + tabKey);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+
+            // Highlight active tab
+            const activeTab = document.getElementById('tab-' + tabKey);
+            if (activeTab) {
+                activeTab.classList.remove('bg-slate-900', 'text-gray-400', 'border', 'border-slate-800');
+                activeTab.classList.add('bg-brand-blue', 'text-slate-950');
+            }
+        }
+
+        // Modal Handlers
+        function openModal(planName) {
+            document.getElementById('modalPlanName').innerText = 'Тариф: ' + planName;
+            document.getElementById('buyModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('buyModal').classList.add('hidden');
+        }
+
+        function handlePurchase(e) {
+            e.preventDefault();
+            alert('Спасибо за заказ! Запрос перенаправляется менеджеру в Telegram...');
+            closeModal();
+            // Optional redirect trigger
+            // window.location.href = 'https://t.me/';
+        }
+
+        // Earnings Counter Animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const counter = document.getElementById('earningsCounter');
+            let start = 10000;
+            const end = 12482.32;
+            const duration = 1500;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = (end - start) / steps;
+
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= end) {
+                    counter.innerText = end.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    clearInterval(timer);
+                } else {
+                    counter.innerText = start.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                }
+            }, stepTime);
+        });
+    </script>
+</body>
+</html>
